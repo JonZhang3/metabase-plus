@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "metabase.uri",
+      "type": "java.lang.String",
+      "description": "Metabase Api."
+  }
+] }

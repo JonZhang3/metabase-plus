@@ -1,0 +1,26 @@
+server:
+    port: 8080
+    error:
+        path: /
+spring:
+    mustache:
+        suffix: .html
+    datasource:
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://10.0.3.151:3307/metabase?characterEncoding=utf8&useSSL=false
+        type: com.alibaba.druid.pool.DruidDataSource
+        druid:
+            initial-size: 2
+    main:
+        allow-bean-definition-overriding: true
+    cloud:
+        gateway:
+            enabled: true
+metabase:
+    uri: http://10.0.3.151:3000
+
+mybatis-plus:
+    global-config:
+        banner: off
