@@ -11,7 +11,7 @@ import pure from "recompose/pure";
 import Card from "metabase/components/Card";
 
 //TODO: extend this to support functionality required for questions
-const ListItem = ({ index, name, description, placeholder, url, icon }) => (
+const ListItem = ({ index, name, description, placeholder, url, icon, extral }) => (
   <Link to={url} className="text-brand-hover">
     <Card hoverable className="mb2 p3 bg-white rounded bordered">
       <div className={cx(S.item)}>
@@ -26,6 +26,7 @@ const ListItem = ({ index, name, description, placeholder, url, icon }) => (
               tooltipMaxWidth="100%"
             >
               <h3>{name}</h3>
+              {extral && <span style={{fontWeight: 'bold', color: 'rgb(148 154 182)', fontSize: '14px'}}>{extral}</span>}
             </Ellipsified>
           </div>
           {(description || placeholder) && (
@@ -48,6 +49,7 @@ ListItem.propTypes = {
   icon: PropTypes.string,
   isEditing: PropTypes.bool,
   field: PropTypes.object,
+  extral: PropTypes.string,
 };
 
 export default pure(ListItem);

@@ -16,6 +16,11 @@ import org.springframework.web.reactive.accept.RequestedContentTypeResolver;
 import org.springframework.web.reactive.config.WebFluxConfigurationSupport;
 import org.springframework.web.reactive.result.method.annotation.RequestMappingHandlerMapping;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+
 @SpringBootApplication
 @MapperScan("com.metabaseplus.mapper")
 public class MetabasePlusApplication {

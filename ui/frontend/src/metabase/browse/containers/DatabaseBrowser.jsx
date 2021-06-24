@@ -16,6 +16,10 @@ import BrowseHeader from "metabase/browse/components/BrowseHeader";
 
 import { ANALYTICS_CONTEXT, ITEM_WIDTHS } from "metabase/browse/constants";
 
+import MetabaseSettings from "metabase/lib/settings";
+
+const envs = MetabaseSettings.getEnvs();
+
 function DatabaseBrowser({ databases }) {
   return (
     <Box>
@@ -30,7 +34,10 @@ function DatabaseBrowser({ databases }) {
               display="block"
               hover={{ color: color("brand") }}
             >
-              <Card p={3} hover={{ color: color("brand") }}>
+              <Card p={3} hover={{ color: color("brand") }} style={{position: 'relative'}}>
+                <span style={{position: 'absolute', right: '32px', top: '32px', fontWeight: 'bold', color: 'rgb(148 154 182)'}}>
+                  {envs && envs[database.env] ? envs[database.env] : database.env}
+                </span>
                 <Icon
                   name="database"
                   color={color("accent2")}

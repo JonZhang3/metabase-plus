@@ -18,6 +18,10 @@ import { getDatabases, getError, getLoading } from "../selectors";
 import * as metadataActions from "metabase/redux/metadata";
 import NoDatabasesEmptyState from "metabase/reference/databases/NoDatabasesEmptyState";
 
+import MetabaseSettings from "metabase/lib/settings";
+
+const envs = MetabaseSettings.getEnvs();
+
 const mapStateToProps = (state, props) => ({
   entities: getDatabases(state, props),
   loading: getLoading(state, props),
@@ -67,6 +71,7 @@ export default class DatabaseList extends Component {
                             description={entity.description}
                             url={`/reference/databases/${entity.id}`}
                             icon="database"
+                            extral={envs && envs[entity.env] ? envs[entity.env] : entity.env}
                           />
                         </li>
                       ),

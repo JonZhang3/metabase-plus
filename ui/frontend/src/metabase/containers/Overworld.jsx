@@ -36,6 +36,7 @@ import {
   getShowHomepageData,
   getShowHomepageXrays,
 } from "metabase/selectors/settings";
+import MetabaseSettings from "metabase/lib/settings";
 
 const PAGE_PADDING = [1, 2, 4];
 
@@ -66,6 +67,8 @@ const getGreeting = createSelector(
   [getUser],
   user => Greeting.sayHello(user.first_name),
 );
+
+const envs = MetabaseSettings.getEnvs();
 
 //class Overworld extends Zelda
 @Search.loadList({
@@ -325,7 +328,11 @@ class Overworld extends React.Component {
                               p={3}
                               bg={color("bg-medium")}
                               className="hover-parent hover--visibility"
+                              style={{position: 'relative'}}
                             >
+                              <span style={{position: 'absolute', right: '32px', top: '32px', fontWeight: 'bold', color: 'rgb(148 154 182)'}}>
+                                {envs && envs[database.env] ? envs[database.env] : database.env}
+                              </span>
                               <Icon
                                 name="database"
                                 color={color("database")}

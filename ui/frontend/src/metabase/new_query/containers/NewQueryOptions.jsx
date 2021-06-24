@@ -93,7 +93,7 @@ export default class NewQueryOptions extends Component {
           {hasDataAccess && (
             <GridItem w={ITEM_WIDTHS}>
               <NewQueryOption
-                image="app/img/simple_mode_illustration"
+                image="/app/img/simple_mode_illustration"
                 title={t`Simple question`}
                 description={t`Pick some data, view it, and easily filter, summarize, and visualize it.`}
                 width={180}
@@ -105,7 +105,7 @@ export default class NewQueryOptions extends Component {
           {hasDataAccess && (
             <GridItem w={ITEM_WIDTHS}>
               <NewQueryOption
-                image="app/img/notebook_mode_illustration"
+                image="/app/img/notebook_mode_illustration"
                 title={t`Custom question`}
                 description={t`Use the advanced notebook editor to join data, create custom columns, do math, and more.`}
                 width={180}
@@ -117,7 +117,7 @@ export default class NewQueryOptions extends Component {
           {hasNativeWrite && (
             <GridItem w={ITEM_WIDTHS}>
               <NewQueryOption
-                image="app/img/sql_illustration"
+                image="/app/img/sql_illustration"
                 title={t`Native query`}
                 description={t`For more complicated questions, you can write your own SQL or native query.`}
                 to={Urls.newQuestion({ type: "native" })}

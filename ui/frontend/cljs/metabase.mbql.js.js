@@ -15,7 +15,6 @@ var lambdaisland = $CLJS.lambdaisland || ($CLJS.lambdaisland = {});
 var medley = $CLJS.medley || ($CLJS.medley = {});
 var metabase = $CLJS.metabase || ($CLJS.metabase = {});
 var com = $CLJS.com || ($CLJS.com = {});
-debugger
 $CLJS.SHADOW_ENV.setLoaded("metabase.mbql.js.js");
 
 goog.provide('metabase.mbql.js');

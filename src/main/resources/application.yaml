@@ -18,6 +18,10 @@ spring:
     cloud:
         gateway:
             enabled: true
+    devtools:
+        livereload:
+            enabled: true
+
 metabase:
     uri: http://10.0.3.151:3000
 

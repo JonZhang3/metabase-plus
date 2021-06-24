@@ -36,6 +36,8 @@ export default function QuestionFilters({
   if (filters.length === 0) {
     return null;
   }
+  debugger;
+  console.log(filters);
   return (
     <div className={className}>
       <div className="flex flex-wrap align-center mbn1 mrn1">
